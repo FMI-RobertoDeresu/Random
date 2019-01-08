@@ -9,6 +9,7 @@ namespace Random
         {
             try
             {
+                Console.WriteLine("INFO! Random text will be set to clipboard.");
                 Run();
             }
             catch (Exception exception)
@@ -30,6 +31,7 @@ namespace Random
                 var withDigits = true;
                 var withLetters = true;
                 var withSpecialChars = false;
+                var randomSize = 16;
 
                 if (!defaultSettings)
                 {
@@ -44,10 +46,10 @@ namespace Random
                     Console.Write("Include special characters? y/n ");
                     withSpecialChars = Console.ReadKey().Key == ConsoleKey.Y;
                     Console.WriteLine();
-                }
 
-                Console.Write("Random text will be set to clipboard. Enter the size of random text: ");
-                var randomSize = int.Parse(Console.ReadLine());
+                    Console.Write("Enter the size of random text: ");
+                    randomSize = int.Parse(Console.ReadLine());
+                }
 
                 var generate = true;
                 while (generate)
